@@ -66,7 +66,16 @@ public class ChemistrySetCategory implements RecipeCategory<ChemistrySetCategory
                 }
             }
         }
+
         widgets.add(Widgets.createArrow(new Point(startPoint.x + 39, startPoint.y - 6)).animationDurationTicks(100));
+
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 66, startPoint.y - 6)).entries(recipeDisplay.getResultingEntries().get(0)).markOutput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 88, startPoint.y - 6)).entries(recipeDisplay.getOutputMatches().get(0)).disableBackground().unmarkInputOrOutput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 66, startPoint.y - 24)).entries(recipeDisplay.getResultingEntries().get(1)).markOutput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 88, startPoint.y - 24)).entries(recipeDisplay.getOutputMatches().get(1)).disableBackground().unmarkInputOrOutput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 66, startPoint.y + 12)).entries(recipeDisplay.getResultingEntries().get(2)).markOutput());
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 88, startPoint.y + 12)).entries(recipeDisplay.getOutputMatches().get(2)).disableBackground().unmarkInputOrOutput());
+
         return widgets;
     }
 
