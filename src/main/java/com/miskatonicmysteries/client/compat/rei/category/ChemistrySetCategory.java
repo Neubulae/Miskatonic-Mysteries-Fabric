@@ -6,7 +6,6 @@ import com.miskatonicmysteries.common.registry.MMObjects;
 import com.miskatonicmysteries.common.util.Constants;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
-import me.shedaniel.rei.api.EntryIngredient;
 import me.shedaniel.rei.api.EntryStack;
 import me.shedaniel.rei.api.RecipeCategory;
 import me.shedaniel.rei.api.RecipeDisplay;
@@ -49,7 +48,7 @@ public class ChemistrySetCategory implements RecipeCategory<ChemistrySetCategory
         List<Widget> widgets = new ArrayList<>();
         Point startPoint = new Point(bounds.getCenterX() - 64, bounds.getCenterY() - 2);
         widgets.add(Widgets.createRecipeBase(bounds));
-        List<EntryIngredient> input = recipeDisplay.getInputEntries();
+        List<List<EntryStack>> input = recipeDisplay.getInputEntries();
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 4, startPoint.y - 24)).entries(input.get(0)).markInput());
         if (input.size() > 1) {
             widgets.add(Widgets.createSlot(new Point(startPoint.x + 22, startPoint.y - 24)).entries(recipeDisplay.getInputEntries().get(1)).markInput());
